@@ -8,6 +8,10 @@ async function getRecipeById(recipe_id) {
         .select('ig.ingredient_name', 're.recipe_name', 'si.quantity', 'st.step_number', 're.id as recipe_id', 'st.id as step_id', 'st.step_instructions', 'si.ingredient_id')
         .where('re.id', recipe_id)
 
+        if(!recipeArray[0]){
+            return null;
+        }
+
     const recipe = {
         recipe_id: recipeArray[0].recipe_id,
         recipe_name: recipeArray[0].recipe_name,
