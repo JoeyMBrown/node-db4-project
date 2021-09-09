@@ -1,0 +1,35 @@
+RECIPES Table
+
+id  ||  name (unique) ||
+
+1   ||   "Spaghetti"  ||
+
+
+
+STEPS Table
+
+id  || Recipe_id  || Step_Instructions  || Step_Number  ||
+
+1   ||     1      ||   "preheat oven"   ||      1       ||
+
+
+INGREDIENT Table
+
+id  ||  Ingredient_name ||
+
+1   ||    "Olive Oil"   ||
+
+
+STEP_INGREDIENTS
+
+id ||  Ingredient_id   ||  step_id  ||  quantity  ||
+
+1  ||         1        ||      1    ||    0.014   ||
+
+
+
+
+RECIPES.id = STEPS.Recipe_id
+
+STEP_INGREDIENTS.Ingredient_id = INGREDIENT.id
+STEP_INGREDIENTS.Step_id = STEPS.id
